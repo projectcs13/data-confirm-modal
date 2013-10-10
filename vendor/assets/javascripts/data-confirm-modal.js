@@ -22,17 +22,24 @@
     var id = 'confirm-modal-' + String(Math.random()).slice(2, -1);
 
     var modal = $(
-      '<div id="'+id+'" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="'+id+'Label" aria-hidden="true">' +
-        '<div class="modal-header">' +
-          '<button class="close" data-dismiss="modal" aria-hidden="true">×</button>' +
-          '<h3 id="'+id+'Label"></h3> ' +
+      '<div id="' + id + '" class="modal fade">' +
+        '<div class="modal-dialog">' +
+        '<div class="modal-content">' +
+          '<div class="modal-header">' +
+            '<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>' +
+            '<h4 id="' + id + 'Label" class="modal-title">' +
+              'Delete a Resource?' +
+            '</h4>' +
+          '</div>' +
+          '<div class="modal-body">' +
+            '<p>Are you sure you want to delete the resource?</p>' +
+          '</div>' +
+          '<div class="modal-footer">' +
+            '<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>' +
+          '</div>' +
         '</div>' +
-        '<div class="modal-body"></div>' +
-        '<div class="modal-footer">' +
-          '<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>' +
-          '<button class="btn btn-danger commit"></button>' +
-        '</div>'+
-      '</div>'
+      '</div>' +
+    '</div>'
     );
 
     var title = element.attr('title') || element.data('original-title') || 'Are you ABSOLUTELY sure?';
